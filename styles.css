@@ -19,14 +19,14 @@ body {
 
 #app-container {
     display: flex;
-    height: 100vh;
+    height: calc(100vh - 60px); /* Adjust for top bar */
 }
 
 #left-panel, #right-panel {
     width: 250px;
     background-color: var(--panel-bg);
     padding: 15px;
-    padding-top: 55px;
+    padding-top: 15px; /* Removed extra top padding */
     overflow-y: auto;
     display: flex;
     flex-direction: column;
@@ -45,10 +45,14 @@ h2, h3 {
 }
 
 #toolbar {
-    margin-bottom: 10px;
+    height: 60px;
+    padding: 10px;
     display: flex;
-    gap: 5px;
+    gap: 10px;
     align-items: center; /* Vertically align items */
+    background-color: var(--panel-bg);
+    border-bottom: 1px solid var(--border-color);
+    box-sizing: border-box;
 }
 
 #scene-prompt-container {
@@ -261,7 +265,7 @@ button:hover {
 }
 
 .panel-toggle {
-    display: block;
+    display: none; /* Hide on desktop by default */
     position: absolute;
     top: 10px;
     right: 10px;
