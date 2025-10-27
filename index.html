@@ -44,12 +44,17 @@
                     <textarea id="scene-prompt" rows="1" placeholder="A vibrant, magical forest..."></textarea>
                     <button id="generate-scene-btn" title="Generate Scene"><img src="generate_icon.png" alt="Generate"></button>
                 </div>
-                <button id="tool-move" class="tool-btn active" title="Move Tool"><img src="move_icon.png" alt="Move"></button>
-                 <button id="tool-add" class="tool-btn" title="Add Last Asset"><img src="add_icon.png" alt="Add"></button>
-                <button id="tool-delete" class="tool-btn" title="Delete Selected Asset"><img src="delete_icon.png" alt="Delete"></button>
-                <button id="import-json-btn" class="tool-btn" title="Import Scene from JSON"><img src="import_icon.png" alt="Import"></button>
-                <button id="export-json-btn" class="tool-btn" title="Export Scene to JSON"><img src="export_icon.png" alt="Export"></button>
-                <button id="save-btn" class="tool-btn" title="Save Scene"><img src="save_icon.png" alt="Save"></button>
+                <div class="dropdown">
+                    <button id="tools-dropdown-btn" class="tool-btn" title="Tools"><img src="tools_icon.png" alt="Tools"></button>
+                    <div class="dropdown-content">
+                        <button id="tool-move" class="tool-btn active" title="Move Tool"><img src="move_icon.png" alt="Move"></button>
+                        <button id="tool-add" class="tool-btn" title="Add Last Asset"><img src="add_icon.png" alt="Add"></button>
+                        <button id="tool-delete" class="tool-btn" title="Delete Selected Asset"><img src="delete_icon.png" alt="Delete"></button>
+                        <button id="import-json-btn" class="tool-btn" title="Import Scene from JSON"><img src="import_icon.png" alt="Import"></button>
+                        <button id="export-json-btn" class="tool-btn" title="Export Scene to JSON"><img src="export_icon.png" alt="Export"></button>
+                        <button id="save-btn" class="tool-btn" title="Save Scene"><img src="save_icon.png" alt="Save"></button>
+                    </div>
+                </div>
             </div>
             <canvas id="editor-canvas"></canvas>
             <div id="mobile-panel-toggles">
