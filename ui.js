@@ -144,6 +144,8 @@ export function setupPanelToggles() {
     const mobileToggleRight = document.getElementById('mobile-toggle-right');
     const toggleLeftPanelBtn = document.getElementById('toggle-left-panel');
     const toggleRightPanelBtn = document.getElementById('toggle-right-panel');
+    const toolsDropdownBtn = document.getElementById('tools-dropdown-btn');
+    const toolsDropdownContent = document.getElementById('tools-dropdown-content');
 
     const togglePanel = (panel) => {
         const isVisible = panel.classList.contains('visible');
@@ -157,6 +159,26 @@ export function setupPanelToggles() {
     mobileToggleRight.addEventListener('click', () => togglePanel(rightPanel));
     toggleLeftPanelBtn.addEventListener('click', () => leftPanel.classList.remove('visible'));
     toggleRightPanelBtn.addEventListener('click', () => rightPanel.classList.remove('visible'));
+
+    // Dropdown toggle for mobile and consistency
+    toolsDropdownBtn.addEventListener('click', (e) => {
+        e.stopPropagation(); // prevent window click listener from closing it immediately
+        toolsDropdownContent.classList.toggle('show');
+    });
+
+    // Close dropdown when clicking outside
+    window.addEventListener('click', (e) => {
+        if (!toolsDropdownBtn.contains(e.target)) {
+            if (toolsDropdownContent.classList.contains('show')) {
+                toolsDropdownContent.classList.remove('show');
+            }
+        }
+    });
+
+    // Hide dropdown after a tool is selected
+    toolsDropdownContent.addEventListener('click', () => {
+        toolsDropdownContent.classList.remove('show');
+    });
 }
 
 export function addAssetToLibrary(asset) {

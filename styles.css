@@ -199,12 +199,18 @@ button:hover {
     border-radius: 4px;
     padding: 5px;
     border: 1px solid var(--border-color);
+    flex-direction: column;
+    gap: 5px;
+}
+
+.dropdown-content.show {
+    display: flex;
 }
 
 .dropdown:hover .dropdown-content {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+    /* display: flex; - This is now controlled by JS */
+    /* flex-direction: column; */
+    /* gap: 5px; */
 }
 
 .dropdown-content button {
@@ -214,6 +220,10 @@ button:hover {
     align-items: center;
     gap: 10px;
     padding: 8px 12px;
+}
+
+.dropdown-content button span {
+    color: var(--text-color);
 }
 
 .dropdown-content button img {
